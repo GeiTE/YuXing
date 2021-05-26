@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>宇星——关于星辰</title>
+	<!-- 外部链接CSS样式 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/fullpage.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+		<!-- 导航栏 -->
+		<header id="header">
+			<div class="container">
+				<nav>
+					<ul class="nav nav-pills nav-justified">
+					  	<li role="presentation"><a href="./index.html">主页</a></li>
+						<li role="presentation"><a href="./About_Astronomy.html">关于星辰</a></li>
+						<li role="presentation"><a href="./share.html">星辰分享</a></li>
+						<li role="presentation" class="active"><a href="#">关于我们</a></li>
+						<li role="presentation"><a href="./image.html">美丽星辰</a></li>
+						<li role="presentation"><a href="./contact.html">联系我们</a></li>
+						<li role="presentation" class="dropdown">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						      友情链接<span class="caret"></span>
+						    </a>
+						    <ul class="dropdown-menu">
+						      <li><a href="http://fullpage.81hu.com/">Fullpage</a></li>
+						      <li><a href="https://baike.baidu.com/item/%E5%A4%A9%E6%96%87%E5%AD%A6/402068?fr=aladdin">天文学</a></li>
+						      <li><a href="https://www.bootcss.com/">Bootstrap</a></li>
+						      <li><a href="https://jquery.com/">JQ</a></li>
+						    </ul>
+						  </li>						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div style="position: fixed;bottom: 0px;width: 100%;height: 40px;background-color: #000;text-align: center;z-index: 20;line-height: 40px;color: #aaa;">
+				本网站所属权为余浩源所有
+		</div>
+		<!-- 导航栏 -->
+		<!-- 主体内容 -->
+		<div id="fullpage">
+			<div class="section active" style="background-image: url(./images/bg_2.jpg);">
+				<div class="container" style="background-color: rgba(255,255,255,0.9);padding: 20px;">
+					<div class="page-header" style="text-align: center;">
+					  <h1>关于<small>余浩源</small></h1>
+					</div>
+					<div class="row">
+						<div class="col-md-3"><img src="./images/top.jpg" alt="" class="img-responsive"></div>
+						<div class="col-md-9">
+							<h3>网站开发流程</h3>
+							<p><b>"宇星"</b>开发初始，是因为忽然看到高楼大厦所遮掩的那一闪闪的星辰，一刹那好像从无感的现在回到了从前那个感觉能够触碰到星空的时候。</p>
+							<p>于是打算见关于宇宙星空的一些专业、知识结合到网页中，将夜空中的星以网站的形式供大家观看。</p>
+							<p>网页制作所用到的技术有：HTML、CSS、JS</p>
+							<p>使用的框架有：JQ、Bootstrap、JQ UI、Fullpage</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+
+	<!-- 外部链接JS样式 -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/fullpage.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				menu:false,
+				navigation:true,
+				slidesNavigation: true
+			});
+			$( "#accordion" ).accordion();
+		});
+	</script>
+</body>
+</html>

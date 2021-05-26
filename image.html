@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>宇星——美丽星辰</title>
+	<!-- 外部链接CSS样式 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/fullpage.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+		<!-- 导航栏 -->
+		<header id="header">
+			<div class="container">
+				<nav>
+					<ul class="nav nav-pills nav-justified">
+					  	<li role="presentation"><a href="./index.html">主页</a></li>
+						<li role="presentation"><a href="./About_Astronomy.html">关于星辰</a></li>
+						<li role="presentation"><a href="./share.html">星辰分享</a></li>
+						<li role="presentation"><a href="./About_US.html">关于我们</a></li>
+						<li role="presentation" class="active"><a href="#">美丽星辰</a></li>
+						<li role="presentation"><a href="contact.html">联系我们</a></li>
+						<li role="presentation" class="dropdown">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						      友情链接<span class="caret"></span>
+						    </a>
+						    <ul class="dropdown-menu">
+						      <li><a href="http://fullpage.81hu.com/">Fullpage</a></li>
+						      <li><a href="https://baike.baidu.com/item/%E5%A4%A9%E6%96%87%E5%AD%A6/402068?fr=aladdin">天文学</a></li>
+						      <li><a href="https://www.bootcss.com/">Bootstrap</a></li>
+						      <li><a href="https://jquery.com/">JQ</a></li>
+						    </ul>
+						  </li>						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<!-- 导航栏 -->
+		<!-- 主体内容 -->
+		<div id="fullpage">
+			<div class="section active">
+				<div class="slide" style="background-image: url(./images/img/img_1.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_2.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_3.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_4.jpg);"></div>
+			</div>
+			<div class="section">
+				<div class="slide" style="background-image: url(./images/img/img_5.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_6.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_7.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_8.jpg);"></div>
+			</div>
+			<div class="section">
+				<div class="slide" style="background-image: url(./images/img/img_9.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_10.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_11.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_12.jpg);"></div>
+			</div>
+			<div class="section">
+				<div class="slide" style="background-image: url(./images/img/img_13.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_14.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_15.jpg);"></div>
+				<div class="slide" style="background-image: url(./images/img/img_16.jpg);"></div>
+				<footer>
+					本网站所属权为余浩源所有
+				</footer>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+
+	<!-- 外部链接JS样式 -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/fullpage.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				menu:false,
+				navigation:true,
+				slidesNavigation: true
+			});
+			$( "#accordion" ).accordion();
+		});
+	</script>
+</body>
+</html>

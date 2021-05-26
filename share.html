@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>宇星——关于星辰</title>
+	<!-- 外部链接CSS样式 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/fullpage.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+		<!-- 导航栏 -->
+		<header id="header">
+			<div class="container">
+				<nav>
+					<ul class="nav nav-pills nav-justified">
+					  	<li role="presentation"><a href="./index.html">主页</a></li>
+						<li role="presentation"><a href="./About_Astronomy.html">关于星辰</a></li>
+						<li role="presentation" class="active"><a href="#">星辰分享</a></li>
+						<li role="presentation"><a href="./About_US.html">关于我们</a></li>
+						<li role="presentation"><a href="./image.html">美丽星辰</a></li>
+						<li role="presentation"><a href="./contact.html">联系我们</a></li>
+						<li role="presentation" class="dropdown">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						      友情链接<span class="caret"></span>
+						    </a>
+						    <ul class="dropdown-menu">
+						      <li><a href="http://fullpage.81hu.com/">Fullpage</a></li>
+						      <li><a href="https://baike.baidu.com/item/%E5%A4%A9%E6%96%87%E5%AD%A6/402068?fr=aladdin">天文学</a></li>
+						      <li><a href="https://www.bootcss.com/">Bootstrap</a></li>
+						      <li><a href="https://jquery.com/">JQ</a></li>
+						    </ul>
+						  </li>						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div style="position: fixed;bottom: 0px;width: 100%;height: 40px;background-color: #000;text-align: center;z-index: 20;line-height: 40px;color: #aaa;">
+				本网站所属权为余浩源所有
+		</div>
+		<!-- 导航栏 -->
+		<!-- 主体内容 -->
+		<div id="fullpage">
+			<div class="section active" style="background-image: url(./images/bg_2.jpg);">
+				<div class="container" style="background-color: rgba(255,255,255,0.8);padding: 50px;">
+					<div class="row" style="margin-top: 20px;">
+						<h1>分享你对天文的所思所想</h1>
+						<hr>
+						<div class="col-md-4">
+							<form action=""  method="get" name="form1" id="form1" style="padding: 0px 60px;">
+								<div class="form-group">
+									<label for="">姓名</label>
+									<input type="text" name="username" id="username" maxlength="64"  class="form-control" />
+								</div>
+								<div class="form-group">
+									<label for="">内容</label>
+									<textarea name="content"  id="content"cols="60" rows="8" class="form-control"></textarea>
+								</div>
+							</form>
+							<input type="button" name="button"  id="button" value="现在分享" class="btn btn-block" style="background-color: #aaaaee;"/>
+						</div>
+						<div class="col-md-8">
+							<div class="text-center" style="box-shadow: 0px 0px 5px #888;margin-top: 40px;">
+								<h3 for="" style="background-color: #aaaaee;">分享信息</h3>
+								<div id="ddiv" style="min-height: 200px;"></div>
+							</div>	
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+
+	<!-- 外部链接JS样式 -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/fullpage.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script>
+		$(document).ready(function() {
+			$("#button").click(function(){
+				$.ajax({
+		      	type:"GET",
+		      	url:"index.php",
+		      		data:{username:$("#username").val(),content:$("#content").val()},
+		      		dataType:"json",
+		      		success:function(data,textStatus){
+		      			$("#ddiv").append("<blockquote><p>留言内容："+data.content+"</p>用户名："+data.username+"</blockquote>");
+		      		}
+		      });
+			})
+			$('#fullpage').fullpage({
+				menu:false
+			});
+			$( "#accordion" ).accordion();
+		});
+	</script>
+</body>
+</html>

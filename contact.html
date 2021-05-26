@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>宇星——关于星辰</title>
+	<!-- 外部链接CSS样式 -->
+	<link rel="stylesheet" href="./css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/jquery-ui.min.css">
+	<link rel="stylesheet" href="./css/fullpage.min.css">
+	<link rel="stylesheet" href="./css/all.css">
+</head>
+<body>
+		<!-- 导航栏 -->
+		<header id="header">
+			<div class="container">
+				<nav>
+					<ul class="nav nav-pills nav-justified">
+					  	<li role="presentation"><a href="./index.html">主页</a></li>
+						<li role="presentation"><a href="./About_Astronomy.html">关于星辰</a></li>
+						<li role="presentation"><a href="./share.html">星辰分享</a></li>
+						<li role="presentation"><a href="./About_US.html">关于我们</a></li>
+						<li role="presentation"><a href="./image.html">美丽星辰</a></li>
+						<li role="presentation" class="active"><a href="#">联系我们</a></li>
+						<li role="presentation" class="dropdown">
+						    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+						      友情链接<span class="caret"></span>
+						    </a>
+						    <ul class="dropdown-menu">
+						      <li><a href="http://fullpage.81hu.com/">Fullpage</a></li>
+						      <li><a href="https://baike.baidu.com/item/%E5%A4%A9%E6%96%87%E5%AD%A6/402068?fr=aladdin">天文学</a></li>
+						      <li><a href="https://www.bootcss.com/">Bootstrap</a></li>
+						      <li><a href="https://jquery.com/">JQ</a></li>
+						    </ul>
+						  </li>						
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div style="position: fixed;bottom: 0px;width: 100%;height: 40px;background-color: #000;text-align: center;z-index: 20;line-height: 40px;color: #aaa;">
+				本网站所属权为余浩源所有
+		</div>
+		<!-- 导航栏 -->
+		<!-- 主体内容 -->
+		<div id="fullpage">
+			<div class="section active" style="background-image: url(./images/bg_2.jpg);">
+				<div class="container" style="background-color: rgba(255,255,255,0.9);padding: 20px;">
+					<div class="page-header" style="text-align: center;">
+					  <h1>联系我们</h1>
+					</div>
+					<form action="">
+						<div class="row">
+							<div class="col-md-3">
+									<div class="form-group">
+										<label for="">姓名</label>
+										<input type="text" class="form-control" id="name" placeholder="请输入您的名字">
+									</div>
+									<div class="form-group">
+										<label for="">手机号码</label>
+										<input type="phone" class="form-control" id="phone" placeholder="请输入您的手机号码">
+									</div>
+									<div class="form-group">
+										<label for="">邮箱</label>
+										<input type="email" class="form-control" id="email" placeholder="请输入您的邮箱">
+									</div>
+									<div class="form-group">
+										<label for="">性别</label>
+										<input type="radio" id="na" name="xb">男
+										<input type="radio" id="nv" name="xb">女
+									</div>
+							</div>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label for="">反馈内容</label>
+									<textarea class="form-control" rows="10" id="fknr"></textarea>
+								</div>
+								<div class="row">
+									<div class="col-md-6"><input type="button" value="提交" class="btn btn-success btn-block" id="submit"></div>
+									<div class="col-md-6"><input type="reset" value="重置" class="btn btn-danger btn-block"></div>
+								</div>
+							</div>
+							<div class="col-md-3"><img src="./images/top.jpg" alt="" class="img-responsive"></div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+		<!-- 主体内容 -->
+
+	<!-- 外部链接JS样式 -->
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/bootstrap.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script src="./js/fullpage.min.js"></script>
+	<script src="./js/all.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				menu:false,
+				navigation:true,
+				slidesNavigation: true
+			});
+			$( "#accordion" ).accordion();
+				$("form :input").blur(function(){		//测试表单框在鼠标移走后内容是否为空，为空则提示。
+					if ($(this).is("#name")) {
+						if ($(this).val()=="") {
+							alert("姓名不能为空!");
+						}
+					}
+					if ($(this).is("#phone")) {
+						if ($(this).val()=="") {
+							alert("邮箱不能为空!");
+						}
+					}
+					if ($(this).is("#email")) {
+						if ($(this).val()=="") {
+							alert("邮箱不能为空!");
+						}
+					}
+				});
+				$("#fknr").blur(function(){
+					if ($(this).val()=="") {
+						alert("请输入反馈内容！");
+					}
+				});
+				$("#submit").click(function(){			//测试所有内容是否填写完毕。
+					if ($("#name").val()=="" && $("#phone").val()=="" && $("#email").val()=="" && $("#fknr").val()=="") {
+						alert("请见信息填写完整，再重试提交。");
+					}
+				})
+		});
+	</script>
+</body>
+</html>
